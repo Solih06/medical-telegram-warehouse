@@ -1,8 +1,7 @@
-name: 'medical_dwh_transformations'
+name: 'medical_warehouse'
 version: '1.0.0'
 config-version: 2
 
-# This points to the profile we will define in profiles.yml
 profile: 'medical_dwh'
 
 model-paths: ["models"]
@@ -17,12 +16,10 @@ clean-targets:
   - "dbt_packages"
 
 models:
-  medical_dwh_transformations:
-    # Configurations applied to all models in the staging folder
+  medical_warehouse:
     staging:
       +materialized: view
       +schema: staging
-    # Configurations applied to all models in the marts (Star Schema) folder
     marts:
       +materialized: table
       +schema: analytics

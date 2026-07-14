@@ -22,16 +22,10 @@ SELECT
     channel_name,
     CAST(message_date AS TIMESTAMP) AS message_timestamp,
     TRIM(message_text) AS cleaned_text,
-    has_media,
+    COALESCE(LENGTH(TRIM(message_text)), 0) AS message_length, -- Required [cite: 2932]
+    COALESCE(has_media, FALSE) AS has_image, -- Required [cite: 2932]
     image_path,
     COALESCE(views, 0) AS views_count,
-    COALESCE(forwards, 0) AS forwards_count,
-    -- Simple extraction check to see if it's a visual product focus
-    CASE 
-        WHEN LOWER(message_text) LIKE '%pills%' OR LOWER(message_text) LIKE '%tablets%' THEN 'Pill'
-        WHEN LOWER(message_text) LIKE '%cream%' OR LOWER(message_text) LIKE '%ointment%' THEN 'Cream'
-        ELSE 'Other/Unspecified'
-    END AS visual_product_type
+    COALESCE(forwards, 0) AS forwards_count
 FROM raw_messages
-WHERE rn = 1
-  AND message_id IS NOT NULL
+WHERE rn = 1 AND message_id IS NOT NULL

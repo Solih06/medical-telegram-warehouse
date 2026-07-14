@@ -1,96 +1,45 @@
-import os
 import subprocess
-import logging
-from dagster import asset, Definitions, AssetExecutionContext
+from dagster import op, job, Definitions
 
-# Setup logging inside Dagster's execution context
-logging.basicConfig(level=logging.INFO)
-
-@asset(group_name="extract_and_load")
-def scrape_telegram_data(context: AssetExecutionContext):
-    """Asset 1: Scrapes public medical channels on Telegram and saves raw JSON partitions."""
-    context.log.info("Starting Telegram Scraping Asset...")
-    
-    # Execute our scraper script in a subprocess
-    result = subprocess.run(
-        ["python", "src/scraper.py"],
-        capture_output=True,
-        text=True
-    )
-    
+@op [cite: 3059]
+def scrape_telegram_data():
+    """Runs the Telegram Scraper[cite: 3060]."""
+    result = subprocess.run(["python", "src/scraper.py"], capture_output=True, text=True)
     if result.returncode != 0:
-        context.log.error(f"Scraper failed: {result.stderr}")
-        raise Exception("Telegram scraper failed execution.")
-        
-    context.log.info("Telegram scraper completed successfully.")
-    context.log.info(result.stdout)
+        raise Exception(f"Scraper failed: {result.stderr}")
 
-
-@asset(deps=[scrape_telegram_data], group_name="extract_and_load")
-def load_raw_data_to_postgres(context: AssetExecutionContext):
-    """Asset 2: Loads the scraped JSON partitions into raw staging tables in PostgreSQL."""
-    context.log.info("Starting database load stage...")
-    
-    result = subprocess.run(
-        ["python", "scripts/load_to_postgres.py"],
-        capture_output=True,
-        text=True
-    )
-    
+@op(ins={}) [cite: 3059]
+def load_raw_to_postgres(context, start):
+    """Loads raw JSON datasets into PostgreSQL[cite: 3061]."""
+    result = subprocess.run(["python", "scripts/load_to_postgres.py"], capture_output=True, text=True)
     if result.returncode != 0:
-        context.log.error(f"Database loading failed: {result.stderr}")
-        raise Exception("Database raw loader failed execution.")
-        
-    context.log.info("Raw data loaded to PostgreSQL staging warehouse.")
-    context.log.info(result.stdout)
+        raise Exception(f"Postgres raw loader failed: {result.stderr}")
 
-
-@asset(deps=[load_raw_data_to_postgres], group_name="enrichment")
-def enrich_images_yolo(context: AssetExecutionContext):
-    """Asset 3: Uses YOLOv8 to detect objects inside downloaded pharmaceutical images and saves the metadata."""
-    context.log.info("Starting YOLOv8 image detection enrichment...")
-    
-    result = subprocess.run(
-        ["python", "scripts/enrich_images.py"],
-        capture_output=True,
-        text=True
-    )
-    
+@op(ins={}) [cite: 3059]
+def run_yolo_enrichment(context, start):
+    """Executes YOLO object detection on downloaded graphics[cite: 3063]."""
+    result = subprocess.run(["python", "src/yolo_detect.py"], capture_output=True, text=True)
     if result.returncode != 0:
-        context.log.error(f"Image enrichment failed: {result.stderr}")
-        raise Exception("Computer vision enrichment failed execution.")
-        
-    context.log.info("Image object detection enrichment task complete.")
-    context.log.info(result.stdout)
+        raise Exception(f"YOLO script failed: {result.stderr}")
 
-
-@asset(deps=[load_raw_data_to_postgres], group_name="transformations")
-def run_dbt_transformations(context: AssetExecutionContext):
-    """Asset 4: Runs dbt models to materialize our clean Star Schema (Marts) in PostgreSQL."""
-    context.log.info("Initiating dbt SQL transformations inside warehouse...")
-    
-    # Run dbt compile and run commands targeting our dbt_project folder
-    result = subprocess.run(
-        ["dbt", "run"],
-        cwd="dbt_project",
-        capture_output=True,
-        text=True
-    )
-    
+@op(ins={}) [cite: 3059]
+def run_dbt_transformations(context, start_loader, start_yolo):
+    """Executes dbt seed, run, and test[cite: 3062]."""
+    # Seed YOLO csv first 
+    subprocess.run(["dbt", "seed"], cwd="medical_warehouse")
+    # Run models [cite: 3062]
+    result = subprocess.run(["dbt", "run"], cwd="medical_warehouse", capture_output=True, text=True)
     if result.returncode != 0:
-        context.log.error(f"dbt run failed: {result.stderr}")
-        raise Exception("dbt transformation execution failed.")
-        
-    context.log.info("dbt models compiled and materialized successfully.")
-    context.log.info(result.stdout)
+        raise Exception(f"dbt run failed: {result.stderr}")
 
+@job [cite: 3058, 3064]
+def medical_warehouse_elt_pipeline():
+    """Define dependencies between ops[cite: 3064, 3065]."""
+    scraped = scrape_telegram_data()
+    loaded = load_raw_to_postgres(scraped)
+    enriched = run_yolo_enrichment(scraped)
+    run_dbt_transformations(loaded, enriched)
 
-# Wrap our assets in a unified Dagster Definitions container
 defs = Definitions(
-    assets=[
-        scrape_telegram_data,
-        load_raw_data_to_postgres,
-        enrich_images_yolo,
-        run_dbt_transformations
-    ]
+    jobs=[medical_warehouse_elt_pipeline]
 )
