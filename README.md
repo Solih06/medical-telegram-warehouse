@@ -26,6 +26,7 @@
 
  ## 📂 Project Structure
 Following enterprise standards, the repository is organized as follows:
+```text
 medical-telegram-warehouse/
 ├── .env                          # Local secrets (API keys, DB credentials) - [DO NOT COMMIT]
 ├── .gitignore                    # Prevents local datasets and venv tracking 
@@ -51,7 +52,7 @@ medical-telegram-warehouse/
 │   └── enrich_images.py          # YOLOv8 Computer Vision enrichment task 
 ├── logs/                         # Logging directory tracking scraper pipeline activity
 └── notebooks/                    # Analytical and exploration notebooks 
-
+```
 ## 🛠️ Tech Stack & Dependencies
 Scraping & Ingestion: Telethon   
 Warehouse Database: PostgreSQL   
