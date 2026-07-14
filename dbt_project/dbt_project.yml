@@ -1,0 +1,28 @@
+name: 'medical_dwh_transformations'
+version: '1.0.0'
+config-version: 2
+
+# This points to the profile we will define in profiles.yml
+profile: 'medical_dwh'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  medical_dwh_transformations:
+    # Configurations applied to all models in the staging folder
+    staging:
+      +materialized: view
+      +schema: staging
+    # Configurations applied to all models in the marts (Star Schema) folder
+    marts:
+      +materialized: table
+      +schema: analytics

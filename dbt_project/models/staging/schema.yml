@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: telegram_messages
+
+models:
+  - name: stg_telegram_messages
+    description: "Cleaned and deduplicated staging view of the raw Telegram messaging data."
+    columns:
+      - name: message_id
+        description: "The unique identifier of the message within its channel."
+        tests:
+          - not_null
+      - name: channel_name
+        description: "The source Telegram channel username."
+        tests:
+          - not_null

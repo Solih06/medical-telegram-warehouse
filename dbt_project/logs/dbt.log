@@ -1,0 +1,336 @@
+[0m11:17:49.327696 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023F860C4980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023F83935090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023F888FB890>]}
+
+
+============================== 11:17:49.336489 | 242b52d8-e0c6-4607-88da-e021e4885645 ==============================
+[0m11:17:49.336489 [info ] [MainThread]: Running with dbt=1.12.0-rc2
+[0m11:17:49.337416 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'version_check': 'True', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Soliana Hailekiros\\Kifya\\medical-telegram-warehouse\\dbt_project', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Soliana Hailekiros\\Kifya\\medical-telegram-warehouse\\dbt_project\\logs'}
+[0m11:17:49.465184 [info ] [MainThread]: dbt version: 1.12.0-rc2
+[0m11:17:49.466807 [info ] [MainThread]: python version: 3.14.6
+[0m11:17:49.467696 [info ] [MainThread]: python path: C:\Users\Soliana Hailekiros\Kifya\medical-telegram-warehouse\.venv\Scripts\python.exe
+[0m11:17:49.468621 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m11:17:50.016349 [info ] [MainThread]: Using profiles dir at C:\Users\Soliana Hailekiros\Kifya\medical-telegram-warehouse\dbt_project
+[0m11:17:50.017165 [info ] [MainThread]: Using profiles.yml file at C:\Users\Soliana Hailekiros\Kifya\medical-telegram-warehouse\dbt_project\profiles.yml
+[0m11:17:50.017870 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\Soliana Hailekiros\Kifya\medical-telegram-warehouse\dbt_project\dbt_project.yml
+[0m11:17:50.019530 [info ] [MainThread]: adapter type: postgres
+[0m11:17:50.020103 [info ] [MainThread]: adapter version: 1.10.2
+[0m11:17:50.207951 [info ] [MainThread]: Configuration:
+[0m11:17:50.208781 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m11:17:50.209405 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m11:17:50.209996 [info ] [MainThread]: Required dependencies:
+[0m11:17:50.210664 [debug] [MainThread]: Executing "git --help"
+[0m11:17:50.369375 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   history    EXPERIMENTAL: Rewrite history\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m11:17:50.370620 [debug] [MainThread]: STDERR: "b''"
+[0m11:17:50.371725 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m11:17:50.373074 [info ] [MainThread]: Connection:
+[0m11:17:50.374032 [info ] [MainThread]:   host: localhost
+[0m11:17:50.375162 [info ] [MainThread]:   port: 5432
+[0m11:17:50.376241 [info ] [MainThread]:   user: postgres
+[0m11:17:50.377238 [info ] [MainThread]:   database: medical_dwh
+[0m11:17:50.378529 [info ] [MainThread]:   schema: raw
+[0m11:17:50.379735 [info ] [MainThread]:   connect_timeout: 10
+[0m11:17:50.381087 [info ] [MainThread]:   role: None
+[0m11:17:50.381785 [info ] [MainThread]:   search_path: None
+[0m11:17:50.382462 [info ] [MainThread]:   keepalives_idle: 0
+[0m11:17:50.383235 [info ] [MainThread]:   sslmode: None
+[0m11:17:50.384532 [info ] [MainThread]:   sslcert: None
+[0m11:17:50.385573 [info ] [MainThread]:   sslkey: None
+[0m11:17:50.386554 [info ] [MainThread]:   sslrootcert: None
+[0m11:17:50.387604 [info ] [MainThread]:   application_name: dbt
+[0m11:17:50.388689 [info ] [MainThread]:   retries: 1
+[0m11:17:50.390376 [info ] [MainThread]: Registered adapter: postgres=1.10.2
+[0m11:17:51.184926 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m11:17:56.830481 [debug] [MainThread]: Using postgres connection "debug"
+[0m11:17:56.831294 [debug] [MainThread]: On debug: select 1 as id
+[0m11:17:56.831998 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:18:00.938396 [debug] [MainThread]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+[0m11:18:05.031101 [debug] [MainThread]: Postgres adapter: Error running SQL: select 1 as id
+[0m11:18:05.031591 [debug] [MainThread]: Postgres adapter: Rolling back transaction.
+[0m11:18:05.031952 [debug] [MainThread]: On debug: No close available on handle
+[0m11:18:05.032296 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m11:18:05.032755 [info ] [MainThread]: [31m1 check failed:[0m
+[0m11:18:05.033551 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+  	Is the server running on that host and accepting TCP/IP connections?
+  connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+  	Is the server running on that host and accepting TCP/IP connections?
+  
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m11:18:05.034885 [debug] [MainThread]: Command `dbt debug` failed at 11:18:05.034723 after 16.07 seconds
+[0m11:18:05.035295 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m11:18:05.035631 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023F889AFCE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023F88C07410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023F86C12360>]}
+[0m11:18:05.036031 [debug] [MainThread]: Flushing usage events
+[0m11:18:06.177162 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:18:09.036883 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017AD0B64980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017ACE3C5090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017AD33FF890>]}
+
+
+============================== 11:18:09.041985 | c91a35f6-80dd-4d75-add6-3ad03b8830de ==============================
+[0m11:18:09.041985 [info ] [MainThread]: Running with dbt=1.12.0-rc2
+[0m11:18:09.042821 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Soliana Hailekiros\\Kifya\\medical-telegram-warehouse\\dbt_project', 'invocation_command': 'dbt run', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Soliana Hailekiros\\Kifya\\medical-telegram-warehouse\\dbt_project\\logs'}
+[0m11:18:09.418756 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c91a35f6-80dd-4d75-add6-3ad03b8830de', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017AD336A650>]}
+[0m11:18:09.510843 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c91a35f6-80dd-4d75-add6-3ad03b8830de', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017AD164A8B0>]}
+[0m11:18:09.513670 [info ] [MainThread]: Registered adapter: postgres=1.10.2
+[0m11:18:09.952532 [debug] [MainThread]: checksum: 4845acf2e72eb08adff12dae78b4d27f12f658112549ab31b5d04c032a7e853e, vars: {}, profile: medical_dwh, target: dev, version: 1.12.0rc2
+[0m11:18:09.953980 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m11:18:09.954533 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'c91a35f6-80dd-4d75-add6-3ad03b8830de', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017AD33AFB50>]}
+[0m11:18:14.174830 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.medical_dwh_transformations.marts
+[0m11:18:14.189210 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c91a35f6-80dd-4d75-add6-3ad03b8830de', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017AD3E2CAA0>]}
+[0m11:18:14.352899 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Soliana Hailekiros\Kifya\medical-telegram-warehouse\dbt_project\target\manifest.json
+[0m11:18:14.383417 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Soliana Hailekiros\Kifya\medical-telegram-warehouse\dbt_project\target\semantic_manifest.json
+[0m11:18:14.439113 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\Soliana Hailekiros\Kifya\medical-telegram-warehouse\dbt_project\target\osi_document.json
+[0m11:18:14.460048 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c91a35f6-80dd-4d75-add6-3ad03b8830de', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017AD4098C90>]}
+[0m11:18:14.460976 [info ] [MainThread]: Found 1 model, 2 data tests, 1 source, 475 macros
+[0m11:18:14.461821 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c91a35f6-80dd-4d75-add6-3ad03b8830de', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017AD40F1570>]}
+[0m11:18:14.465705 [info ] [MainThread]: 
+[0m11:18:14.466515 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m11:18:14.467208 [info ] [MainThread]: 
+[0m11:18:14.467983 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:18:14.469580 [debug] [ThreadPool]: Acquiring new postgres connection 'list_medical_dwh'
+[0m11:18:14.588496 [debug] [ThreadPool]: Using postgres connection "list_medical_dwh"
+[0m11:18:14.589035 [debug] [ThreadPool]: On list_medical_dwh: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "medical_dwh", "target_name": "dev", "connection_name": "list_medical_dwh"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:18:14.589440 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:18:18.682916 [debug] [ThreadPool]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+[0m11:18:22.762868 [debug] [ThreadPool]: Postgres adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "medical_dwh", "target_name": "dev", "connection_name": "list_medical_dwh"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:18:22.763616 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m11:18:22.764020 [debug] [ThreadPool]: Postgres adapter: Error running SQL: macro list_schemas
+[0m11:18:22.764295 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m11:18:22.764570 [debug] [ThreadPool]: On list_medical_dwh: No close available on handle
+[0m11:18:22.765290 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:18:22.765564 [debug] [MainThread]: Connection 'list_medical_dwh' was properly closed.
+[0m11:18:22.765825 [info ] [MainThread]: 
+[0m11:18:22.766242 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 8.30 seconds (8.30s).
+[0m11:18:22.766964 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Database Error
+  connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+  	Is the server running on that host and accepting TCP/IP connections?
+  connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+  	Is the server running on that host and accepting TCP/IP connections?
+  
+[0m11:18:22.768010 [debug] [MainThread]: Command `dbt run` failed at 11:18:22.767885 after 13.99 seconds
+[0m11:18:22.768529 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017AD405AC90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017AD433F750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017AD433F960>]}
+[0m11:18:22.769115 [debug] [MainThread]: Flushing usage events
+[0m11:18:23.548533 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:18:26.341761 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020C83D54980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020C81645090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020C865EF890>]}
+
+
+============================== 11:18:26.346604 | b601b2d7-2f95-405e-9a85-860c63b9e946 ==============================
+[0m11:18:26.346604 [info ] [MainThread]: Running with dbt=1.12.0-rc2
+[0m11:18:26.347293 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Soliana Hailekiros\\Kifya\\medical-telegram-warehouse\\dbt_project', 'invocation_command': 'dbt test', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Soliana Hailekiros\\Kifya\\medical-telegram-warehouse\\dbt_project\\logs'}
+[0m11:18:26.621690 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b601b2d7-2f95-405e-9a85-860c63b9e946', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020C8655A650>]}
+[0m11:18:26.713804 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b601b2d7-2f95-405e-9a85-860c63b9e946', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020C8483A8B0>]}
+[0m11:18:26.715731 [info ] [MainThread]: Registered adapter: postgres=1.10.2
+[0m11:18:27.084715 [debug] [MainThread]: checksum: 4845acf2e72eb08adff12dae78b4d27f12f658112549ab31b5d04c032a7e853e, vars: {}, profile: medical_dwh, target: dev, version: 1.12.0rc2
+[0m11:18:27.329294 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:18:27.329752 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m11:18:27.330111 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:18:27.338928 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.medical_dwh_transformations.marts
+[0m11:18:27.410553 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b601b2d7-2f95-405e-9a85-860c63b9e946', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020C8659F550>]}
+[0m11:18:27.570064 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Soliana Hailekiros\Kifya\medical-telegram-warehouse\dbt_project\target\manifest.json
+[0m11:18:27.575222 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Soliana Hailekiros\Kifya\medical-telegram-warehouse\dbt_project\target\semantic_manifest.json
+[0m11:18:27.611675 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\Soliana Hailekiros\Kifya\medical-telegram-warehouse\dbt_project\target\osi_document.json
+[0m11:18:27.644991 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b601b2d7-2f95-405e-9a85-860c63b9e946', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020C86D74320>]}
+[0m11:18:27.645707 [info ] [MainThread]: Found 1 model, 2 data tests, 1 source, 475 macros
+[0m11:18:27.646340 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b601b2d7-2f95-405e-9a85-860c63b9e946', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020C86E17770>]}
+[0m11:18:27.649417 [info ] [MainThread]: 
+[0m11:18:27.650097 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m11:18:27.650674 [info ] [MainThread]: 
+[0m11:18:27.651517 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:18:27.653065 [debug] [ThreadPool]: Acquiring new postgres connection 'list_medical_dwh_raw_staging'
+[0m11:18:27.768638 [debug] [ThreadPool]: Using postgres connection "list_medical_dwh_raw_staging"
+[0m11:18:27.769143 [debug] [ThreadPool]: On list_medical_dwh_raw_staging: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "medical_dwh", "target_name": "dev", "connection_name": "list_medical_dwh_raw_staging"} */
+select
+      'medical_dwh' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'raw_staging'
+    union all
+    select
+      'medical_dwh' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'raw_staging'
+    union all
+    select
+      'medical_dwh' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'raw_staging'
+  
+[0m11:18:27.769598 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:18:31.872798 [debug] [ThreadPool]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+[0m11:18:35.958124 [debug] [ThreadPool]: Postgres adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "medical_dwh", "target_name": "dev", "connection_name": "list_medical_dwh_raw_staging"} */
+select
+      'medical_dwh' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'raw_staging'
+    union all
+    select
+      'medical_dwh' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'raw_staging'
+    union all
+    select
+      'medical_dwh' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'raw_staging'
+  
+[0m11:18:35.958549 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m11:18:35.958933 [debug] [ThreadPool]: Postgres adapter: Error running SQL: macro list_relations_without_caching
+[0m11:18:35.959234 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m11:18:35.959543 [debug] [ThreadPool]: On list_medical_dwh_raw_staging: No close available on handle
+[0m11:18:35.960244 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:18:35.960527 [debug] [MainThread]: Connection 'list_medical_dwh_raw_staging' was properly closed.
+[0m11:18:35.960839 [info ] [MainThread]: 
+[0m11:18:35.961275 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 8.31 seconds (8.31s).
+[0m11:18:35.961929 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Database Error
+  connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+  	Is the server running on that host and accepting TCP/IP connections?
+  connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+  	Is the server running on that host and accepting TCP/IP connections?
+  
+[0m11:18:35.963128 [debug] [MainThread]: Command `dbt test` failed at 11:18:35.963001 after 9.84 seconds
+[0m11:18:35.963514 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020C8491B520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020C86E2F290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020C86E2F350>]}
+[0m11:18:35.963908 [debug] [MainThread]: Flushing usage events
+[0m11:18:36.835531 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:23:28.107076 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F15A4E4980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F157D55090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F15CD7F890>]}
+
+
+============================== 11:23:28.112142 | 8386e8b2-5a08-414e-9294-a12d8c021a49 ==============================
+[0m11:23:28.112142 [info ] [MainThread]: Running with dbt=1.12.0-rc2
+[0m11:23:28.113032 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Soliana Hailekiros\\Kifya\\medical-telegram-warehouse\\dbt_project', 'invocation_command': 'dbt run', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Soliana Hailekiros\\Kifya\\medical-telegram-warehouse\\dbt_project\\logs'}
+[0m11:23:28.382740 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8386e8b2-5a08-414e-9294-a12d8c021a49', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F15CCEA650>]}
+[0m11:23:28.476407 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8386e8b2-5a08-414e-9294-a12d8c021a49', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F15AFCE8B0>]}
+[0m11:23:28.478211 [info ] [MainThread]: Registered adapter: postgres=1.10.2
+[0m11:23:28.834636 [debug] [MainThread]: checksum: 4845acf2e72eb08adff12dae78b4d27f12f658112549ab31b5d04c032a7e853e, vars: {}, profile: medical_dwh, target: dev, version: 1.12.0rc2
+[0m11:23:29.035925 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 3 files added, 0 files changed.
+[0m11:23:29.036560 [debug] [MainThread]: Partial parsing: added file: medical_dwh_transformations://models\marts\fct_messages.sql
+[0m11:23:29.036995 [debug] [MainThread]: Partial parsing: added file: medical_dwh_transformations://models\marts\dim_channels.sql
+[0m11:23:29.037399 [debug] [MainThread]: Partial parsing: added file: medical_dwh_transformations://models\marts\dim_dates.sql
+[0m11:23:29.455723 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8386e8b2-5a08-414e-9294-a12d8c021a49', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F15D2DF950>]}
+[0m11:23:29.594620 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Soliana Hailekiros\Kifya\medical-telegram-warehouse\dbt_project\target\manifest.json
+[0m11:23:29.599494 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Soliana Hailekiros\Kifya\medical-telegram-warehouse\dbt_project\target\semantic_manifest.json
+[0m11:23:29.634036 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\Soliana Hailekiros\Kifya\medical-telegram-warehouse\dbt_project\target\osi_document.json
+[0m11:23:29.652128 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8386e8b2-5a08-414e-9294-a12d8c021a49', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F15D6888C0>]}
+[0m11:23:29.652762 [info ] [MainThread]: Found 4 models, 2 data tests, 1 source, 475 macros
+[0m11:23:29.653284 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8386e8b2-5a08-414e-9294-a12d8c021a49', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F15D350910>]}
+[0m11:23:29.655803 [info ] [MainThread]: 
+[0m11:23:29.656325 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m11:23:29.656798 [info ] [MainThread]: 
+[0m11:23:29.657419 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:23:29.662359 [debug] [ThreadPool]: Acquiring new postgres connection 'list_medical_dwh'
+[0m11:23:29.676169 [debug] [ThreadPool]: Acquiring new postgres connection 'list_medical_dwh'
+[0m11:23:29.768205 [debug] [ThreadPool]: Using postgres connection "list_medical_dwh"
+[0m11:23:29.768741 [debug] [ThreadPool]: On list_medical_dwh: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "medical_dwh", "target_name": "dev", "connection_name": "list_medical_dwh"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:23:29.769141 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:23:29.769605 [debug] [ThreadPool]: Using postgres connection "list_medical_dwh"
+[0m11:23:29.770348 [debug] [ThreadPool]: On list_medical_dwh: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "medical_dwh", "target_name": "dev", "connection_name": "list_medical_dwh"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:23:29.770747 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:23:33.833570 [debug] [ThreadPool]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+[0m11:23:33.865007 [debug] [ThreadPool]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+[0m11:23:37.879994 [debug] [ThreadPool]: Postgres adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "medical_dwh", "target_name": "dev", "connection_name": "list_medical_dwh"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:23:37.880600 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m11:23:37.880996 [debug] [ThreadPool]: Postgres adapter: Error running SQL: macro list_schemas
+[0m11:23:37.881408 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m11:23:37.881919 [debug] [ThreadPool]: On list_medical_dwh: No close available on handle
+[0m11:23:37.957499 [debug] [ThreadPool]: Postgres adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "medical_dwh", "target_name": "dev", "connection_name": "list_medical_dwh"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:23:37.958296 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m11:23:37.958849 [debug] [ThreadPool]: Postgres adapter: Error running SQL: macro list_schemas
+[0m11:23:37.959184 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m11:23:37.959512 [debug] [ThreadPool]: On list_medical_dwh: No close available on handle
+[0m11:23:37.960235 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:23:37.960577 [debug] [MainThread]: Connection 'list_medical_dwh' was properly closed.
+[0m11:23:37.960984 [debug] [MainThread]: Connection 'list_medical_dwh' was properly closed.
+[0m11:23:37.961404 [info ] [MainThread]: 
+[0m11:23:37.962001 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 8.30 seconds (8.30s).
+[0m11:23:37.962768 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Database Error
+  connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+  	Is the server running on that host and accepting TCP/IP connections?
+  connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+  	Is the server running on that host and accepting TCP/IP connections?
+  
+[0m11:23:37.963922 [debug] [MainThread]: Command `dbt run` failed at 11:23:37.963791 after 10.12 seconds
+[0m11:23:37.964286 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F15B0AA0D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F15D791550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F15D791610>]}
+[0m11:23:37.964638 [debug] [MainThread]: Flushing usage events
+[0m11:23:38.951568 [debug] [MainThread]: An error was encountered while trying to flush usage events

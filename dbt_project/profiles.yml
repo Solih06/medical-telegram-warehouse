@@ -1,0 +1,12 @@
+medical_dwh:
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: postgres
+      password: your_secure_password  # Update with your actual PostgreSQL password
+      port: 5432
+      dbname: medical_dwh
+      schema: raw
+      threads: 4
+  target: dev
